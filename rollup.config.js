@@ -1,5 +1,5 @@
-import resolve from "rollup-plugin-node-resolve";
-import commonjs from "rollup-plugin-commonjs";
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import {terser} from "rollup-plugin-terser";
 import babel from "rollup-plugin-babel";
 import pkg from "./package.json";
@@ -12,6 +12,11 @@ export default [
                 name: "vn2000-converter",
                 file: pkg.browser,
                 format: "umd"
+            },
+            {
+                name: "vn2000_converter",
+                file: pkg.unpkg,
+                format: "iife"
             }
         ],
         plugins: [

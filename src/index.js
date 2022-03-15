@@ -1,4 +1,4 @@
-const proj4 = require('../src/proj4');
+import proj4 from 'proj4';
 import {N_DEC_VN2000, N_DEC_WGS84, N_DEC_H, EPSG_WGS84, EPSG_VN2000_DEFS} from "./config";
 
 const validate = (x, y, h, province) => {

@@ -1,10 +1,11 @@
 {
   "name": "vn2000-converter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "VN2000 to WGS84 converter and reverse",
   "main": "dist/vn2000-converter.cjs.js",
   "module": "dist/vn2000-converter.esm.js",
   "browser": "dist/vn2000-converter.umd.js",
+  "unpkg": "dist/vn2000-converter.min.js",
   "scripts": {
     "build": "rm -rf dist && rollup -c",
     "test": "node test/spec",
@@ -15,15 +16,21 @@
     "wgs84",
     "vn2000 converter"
   ],
-  "author": "Namlun <namlun.kaka.12@gmail.com>",
+  "repository": {
+    "url": "https://github.com/namlunkaka/vn2000-converter.git"
+  },
+  "author": "namlunkaka <namlun.kaka.12@gmail.com>",
   "license": "MIT",
+  "dependencies": {
+    "proj4": "file:lib/proj4"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-node-resolve": "^13.1.3",
     "rollup": "^2.70.0",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2"
   },
   "files": [

@@ -3,11 +3,17 @@ A tool convert VN2000 coordinate system to WGS84 (GPS) and reverse
 This tool is base on https://tool-online.com/en/coordinate-converter.php
 
 ## Installation
+- Install via npm or yarn:
 ```shell script
 # install with npm
 $ npm install vn2000-converter
 # install with yarn
 $ yarn add vn2000-converter
+```
+
+- Include within your HTML
+```html
+<script src="https://unpkg.com/vn2000-converter@1.0.0/dist/vn2000-converter.min.js"></script>
 ```
 
 ## Usage

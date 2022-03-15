@@ -1,0 +1,8 @@
+{
+  "name": "proj4",
+  "version": "0.0.1",
+  "description": "wrap proj4",
+  "main": "index.js",
+  "author": "namlunkaka <namlun.kaka.12@gmail.com>",
+  "license": "MIT"
+}

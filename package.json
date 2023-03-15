@@ -1,6 +1,6 @@
 {
   "name": "vn2000-converter",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "VN2000 to WGS84 converter and reverse",
   "main": "dist/vn2000-converter.cjs.js",
   "module": "dist/vn2000-converter.esm.js",
@@ -22,7 +22,7 @@
   "author": "namlunkaka <namlun.kaka.12@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "proj4": "file:lib/proj4"
+    "namlun-proj4": "0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",

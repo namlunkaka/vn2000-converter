@@ -16,7 +16,7 @@ $ yarn add vn2000-converter
 
 - Include within your HTML
 ```html
-<script src="https://unpkg.com/vn2000-converter@1.0.1/dist/vn2000-converter.min.js"></script>
+<script src="https://unpkg.com/vn2000-converter@latest/dist/vn2000-converter.min.js"></script>
 ```
 
 ## Usage

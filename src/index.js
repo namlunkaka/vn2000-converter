@@ -1,4 +1,4 @@
-import proj4 from 'proj4';
+import proj4 from 'namlun-proj4';
 import {
   N_DEC_VN2000,
   N_DEC_WGS84,

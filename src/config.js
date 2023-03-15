@@ -1,8 +1,11 @@
 export const N_DEC_WGS84 = 8;
 export const N_DEC_VN2000 = 3;
+export const N_DEC_HN72 = 8;
 export const N_DEC_H = 3;
 
 export const EPSG_WGS84 = "EPSG:4326";
+
+export const EPSG_HN72_DEFS = "+proj=longlat +ellps=krass +towgs84=-17.51,-108.32,-62.39,0,0,0,0 +no_defs";
 
 export const EPSG_VN2000_DEFS = {
     VN2000_LAI_CHAU: "+proj=tmerc +lat_0=0 +lon_0=103.000 +k=0.9999 +x_0=500000 +y_0=0 +ellps=WGS84 +towgs84=-191.90441429,-39.30318279,-111.45032835,-0.00928836,0.01975479,-0.00427372,0.252906278 +units=m +no_defs",

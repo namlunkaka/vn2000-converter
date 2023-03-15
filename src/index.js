@@ -1,12 +1,20 @@
 import proj4 from 'proj4';
-import {N_DEC_VN2000, N_DEC_WGS84, N_DEC_H, EPSG_WGS84, EPSG_VN2000_DEFS} from "./config";
+import {
+  N_DEC_VN2000,
+  N_DEC_WGS84,
+  N_DEC_H,
+  EPSG_WGS84,
+  EPSG_VN2000_DEFS,
+  N_DEC_HN72,
+  EPSG_HN72_DEFS
+} from "./config";
 
-const validate = (x, y, h, province) => {
+const validate = (x, y, h, province, validateProvince = false) => {
     if (isNaN(x) || isNaN(y) || isNaN(h)) {
         console.error("Input error!");
         return false;
     }
-    if (!province || !Object.keys(EPSG_VN2000_DEFS).includes(province)) {
+    if (validateProvince && (!province || !Object.keys(EPSG_VN2000_DEFS).includes(province))) {
         console.error("Province invalid! Please call `list_province()` to show all");
         return false;
     }
@@ -37,7 +45,7 @@ export const list_province = () => {
 }
 
 export const vn2000_to_wgs84 = (dx, dy, h, province) => {
-    if(!validate(dx, dy, h, province)) return;
+    if(!validate(dx, dy, h, province, true)) return;
 
     // init defs
     proj4.defs(province, EPSG_VN2000_DEFS[province].trim());
@@ -52,7 +60,7 @@ export const vn2000_to_wgs84 = (dx, dy, h, province) => {
 }
 
 export const wgs84_to_vn2000 = (dx, dy, h, province) => {
-    if(!validate(dx, dy, h, province)) return;
+    if(!validate(dx, dy, h, province, true)) return;
 
     // init defs
     proj4.defs(province, EPSG_VN2000_DEFS[province].trim());
@@ -64,4 +72,36 @@ export const wgs84_to_vn2000 = (dx, dy, h, province) => {
         y: y.toFixed(N_DEC_VN2000),
         h: z.toFixed(N_DEC_VN2000),
     }
+}
+
+export const hn72_to_wgs84 = (dx, dy, h) => {
+  if(!validate(dx, dy, h)) return;
+
+  // init defs
+  const hn72 = 'hn72';
+  proj4.defs(hn72, EPSG_HN72_DEFS);
+
+  const {x, y, z} = converter(parseFloat(dx), parseFloat(dy), h, hn72, EPSG_WGS84);
+
+  return {
+    x: x.toFixed(N_DEC_WGS84),
+    y: y.toFixed(N_DEC_WGS84),
+    h: z.toFixed(N_DEC_H),
+  }
+}
+
+export const wgs84_to_hn72 = (dx, dy, h) => {
+  if(!validate(dx, dy, h)) return;
+
+  // init defs
+  const hn72 = 'hn72';
+  proj4.defs(hn72, EPSG_HN72_DEFS);
+
+  const {x, y, z} = converter(parseFloat(dx), parseFloat(dy), h, EPSG_WGS84, hn72);
+
+  return {
+    x: x.toFixed(N_DEC_HN72),
+    y: y.toFixed(N_DEC_HN72),
+    h: z.toFixed(N_DEC_H),
+  }
 }

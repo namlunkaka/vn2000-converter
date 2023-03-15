@@ -1,5 +1,5 @@
 # vn2000-converter
-A tool convert VN2000 coordinate system to WGS84 (GPS) and reverse  
+A tool convert VN2000/HN72 coordinate system to WGS84 (GPS) and reverse  
 This tool is base on https://tool-online.com/en/coordinate-converter.php
 
 ## Demo
@@ -16,7 +16,7 @@ $ yarn add vn2000-converter
 
 - Include within your HTML
 ```html
-<script src="https://unpkg.com/vn2000-converter@1.0.0/dist/vn2000-converter.min.js"></script>
+<script src="https://unpkg.com/vn2000-converter@1.0.1/dist/vn2000-converter.min.js"></script>
 ```
 
 ## Usage
@@ -37,11 +37,13 @@ import {vn2000_to_wgs84, wgs84_to_vn2000} from 'vn2000-converter';
 
 ### Functions
 
-Function            | Arguments             | Description   
---------            | ---------             | -------
-vn2000_to_wgs84     | dx, xy, h, province   | Convert VN2000 coordinate system to WGS84 (GPS)      
-wgs84_to_vn2000     | dx, xy, h, province   |Convert WGS84 (GPS) coordinate system to VN2000 
-list_province       |                       |List provinces of VN2000 coordinate system  
+Function            | Arguments           | Description   
+--------            |---------------------| -------
+vn2000_to_wgs84     | dx, xy, h, province | Convert VN2000 coordinate system to WGS84 (GPS)      
+wgs84_to_vn2000     | dx, xy, h, province | Convert WGS84 (GPS) coordinate system to VN2000 
+list_province       |                     |List provinces of VN2000 coordinate system  
+hn72_to_wgs84       | dx, xy, h           | Convert HN72 coordinate system to WGS84 (GPS)
+wgs84_to_hn72       | dx, xy, h           | Convert WGS84 (GPS) coordinate system to HN72
 
 #### Arguments
 

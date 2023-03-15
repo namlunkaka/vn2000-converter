@@ -1,6 +1,6 @@
 {
   "name": "vn2000-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "VN2000 to WGS84 converter and reverse",
   "main": "dist/vn2000-converter.cjs.js",
   "module": "dist/vn2000-converter.esm.js",
